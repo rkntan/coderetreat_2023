@@ -4,6 +4,8 @@ import pygame
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 CELL_SIZE = 20
+ROWS = SCREEN_HEIGHT // CELL_SIZE
+COLS = SCREEN_WIDTH // CELL_SIZE
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -33,12 +35,17 @@ class GridFactory:
 class Board:
     def __init__(self):
         self.grid_factory = GridFactory()
-        self.rows = SCREEN_HEIGHT // CELL_SIZE
-        self.cols = SCREEN_WIDTH // CELL_SIZE
+        self.rows = ROWS
+        self.cols = COLS
         self.game = self.grid_factory.create(self.rows, self.cols)
         for i in range(len(self.game)):
             for j in range(len(self.game[0])):
                 self.game[i][j].set_status(random.randint(0, 1))
+
+    def set_all_cells_status(self, status):
+        for row in self.game:
+            for cell in row:
+                cell.set_status(status)
 
     def draw_board(self, screen):
         for i in range(len(self.game)):
