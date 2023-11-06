@@ -50,9 +50,6 @@ python app/main.py
 
 This will launch the Game of Life application using the `pygame` library. 
 
-## Additional Information
-
-
 Have a great time coding at Coderetreat 2023, and enjoy working on the Game of Life project! If you have any questions or need further assistance, don't hesitate to reach out to the organizers or your fellow participants.
 ```
 
