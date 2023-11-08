@@ -87,7 +87,7 @@ class Board:
 
 if __name__ == "__main__":
     pygame.init()
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    my_screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Game of Life")
 
     board = Board()
@@ -98,8 +98,8 @@ if __name__ == "__main__":
             if event.type == pygame.QUIT:
                 running = False
 
-        screen.fill(WHITE)
-        board.draw_board(screen)
+        my_screen.fill(WHITE)
+        board.draw_board(my_screen)
         pygame.display.update()
         board.update()
         pygame.time.delay(500)
